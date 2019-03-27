@@ -1,12 +1,9 @@
 PODS:
   - 1PasswordExtension (1.8.5)
   - Alamofire (4.7.3)
-  - CocoaLumberjack (3.4.2):
-    - CocoaLumberjack/Default (= 3.4.2)
-    - CocoaLumberjack/Extensions (= 3.4.2)
-  - CocoaLumberjack/Default (3.4.2)
-  - CocoaLumberjack/Extensions (3.4.2):
-    - CocoaLumberjack/Default
+  - CocoaLumberjack (3.5.2):
+    - CocoaLumberjack/Core (= 3.5.2)
+  - CocoaLumberjack/Core (3.5.2)
   - Expecta (1.0.6)
   - FormatterKit/Resources (1.8.2)
   - FormatterKit/TimeIntervalFormatter (1.8.2):
@@ -45,7 +42,19 @@ PODS:
   - Specta (1.0.7)
   - SVProgressHUD (2.2.5)
   - UIDeviceIdentifier (1.1.4)
-  - WordPressKit (3.1.1):
+  - WordPressAuthenticator (1.2.0):
+    - 1PasswordExtension (= 1.8.5)
+    - Alamofire (= 4.7.3)
+    - CocoaLumberjack (~> 3.4)
+    - GoogleSignInRepacked (= 4.1.2)
+    - Gridicons (~> 0.15)
+    - lottie-ios (= 2.5.2)
+    - "NSURL+IDN (= 0.3)"
+    - SVProgressHUD (= 2.2.5)
+    - WordPressKit (~> 3.1)
+    - WordPressShared (~> 1.4)
+    - WordPressUI (~> 1.0)
+  - WordPressKit (3.1.2):
     - Alamofire (~> 4.7.3)
     - CocoaLumberjack (~> 3.4)
     - NSObject-SafeExpectations (= 0.0.3)
@@ -59,22 +68,12 @@ PODS:
   - wpxmlrpc (0.8.4)
 
 DEPENDENCIES:
-  - 1PasswordExtension (= 1.8.5)
-  - Alamofire (= 4.7.3)
-  - CocoaLumberjack (= 3.4.2)
   - Expecta (= 1.0.6)
-  - GoogleSignInRepacked (= 4.1.2)
-  - Gridicons (~> 0.15)
-  - lottie-ios (= 2.5.2)
-  - "NSURL+IDN (= 0.3)"
   - OCMock (~> 3.4)
   - OHHTTPStubs (= 6.1.0)
   - OHHTTPStubs/Swift (= 6.1.0)
   - Specta (= 1.0.7)
-  - SVProgressHUD (= 2.2.5)
-  - WordPressKit (~> 3.1)
-  - WordPressShared (~> 1.4)
-  - WordPressUI (~> 1.0)
+  - WordPressAuthenticator (from `.`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -99,10 +98,14 @@ SPEC REPOS:
     - WordPressUI
     - wpxmlrpc
 
+EXTERNAL SOURCES:
+  WordPressAuthenticator:
+    :path: "."
+
 SPEC CHECKSUMS:
   1PasswordExtension: 0e95bdea64ec8ff2f4f693be5467a09fac42a83d
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
   GoogleSignInRepacked: d357702618c555f38923576924661325eb1ef22b
@@ -116,11 +119,12 @@ SPEC CHECKSUMS:
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIDeviceIdentifier: 8f8a24b257a4d978c8d40ad1e7355b944ffbfa8c
-  WordPressKit: 9af12361492d12c6c5512d3d7de594aa415ad670
+  WordPressAuthenticator: 30ccfe800d6d5cd6b35424610f815a5858934a1b
+  WordPressKit: c431508391b18d5d5e622564c9f12ee9f8883eda
   WordPressShared: 63d57a4a07ad9f9a1ee5e8a7162e48fbb5192014
   WordPressUI: 44fe43a9c5c504dfd534286e39e1ce6ebcd69ff5
   wpxmlrpc: 6ba55c773cfa27083ae4a2173e69b19f46da98e2
 
-PODFILE CHECKSUM: 220853b585b7b73f8958c30e6f9c1c5760d4c7a3
+PODFILE CHECKSUM: c8bf9532cdd4932ec77b46bb89252fe7aabb1044
 
 COCOAPODS: 1.5.3
