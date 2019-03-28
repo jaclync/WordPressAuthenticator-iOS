@@ -6,12 +6,7 @@ use_frameworks!
 platform :ios, '10.0'
 plugin 'cocoapods-repo-update'
 
-## WordPress Authenticator
-## =======================
-##
-target 'WordPressAuthenticator' do
-  project 'WordPressAuthenticator.xcodeproj'
-
+def wordpress_authenticator_pods
   ## Automattic libraries
   ## ====================
   ##
@@ -19,7 +14,7 @@ target 'WordPressAuthenticator' do
   pod 'WordPressUI', '~> 1.0'
   pod 'WordPressKit', '~> 3.1'
   pod 'WordPressShared', '~> 1.4'
-
+  
   ## Third party libraries
   ## =====================
   ##
@@ -30,18 +25,28 @@ target 'WordPressAuthenticator' do
   pod 'lottie-ios', '2.5.2'
   pod 'NSURL+IDN', '0.3'
   pod 'SVProgressHUD', '2.2.5'
+end
 
+## WordPress Authenticator
+## =======================
+##
+target 'WordPressAuthenticator' do
+  project 'WordPressAuthenticator.xcodeproj'
 
-  ## Unit Tests
-  ## ==========
-  ##
-  target 'WordPressAuthenticatorTests' do
-    inherit! :search_paths
+  wordpress_authenticator_pods
+end
 
-    pod 'OHHTTPStubs', '6.1.0'
-    pod 'OHHTTPStubs/Swift', '6.1.0'
-    pod 'OCMock', '~> 3.4'
-    pod 'Expecta', '1.0.6'
-    pod 'Specta', '1.0.7'
-  end
+## Unit Tests
+## ==========
+##
+target 'WordPressAuthenticatorTests' do
+  project 'WordPressAuthenticator.xcodeproj'
+
+  wordpress_authenticator_pods
+  
+  pod 'OHHTTPStubs', '6.1.0'
+  pod 'OHHTTPStubs/Swift', '6.1.0'
+  pod 'OCMock', '~> 3.4'
+  pod 'Expecta', '1.0.6'
+  pod 'Specta', '1.0.7'
 end
