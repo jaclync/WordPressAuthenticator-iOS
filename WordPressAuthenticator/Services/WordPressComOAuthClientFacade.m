@@ -15,6 +15,26 @@
 
 @synthesize client;
 
+- (instancetype)initWithClient:(NSString *)client
+                        secret:(NSString *)secret
+           wordPressComBaseUrl:(NSString *)wordPressComBaseUrl
+        wordPressComApiBaseUrl:(NSString *)wordPressComApiBaseUrl
+{
+    NSParameterAssert(client);
+    NSParameterAssert(secret);
+    NSParameterAssert(wordPressComBaseUrl);
+    NSParameterAssert(wordPressComApiBaseUrl);
+    self = [super init];
+    if (self) {
+        self.client = [WordPressComOAuthClient clientWithClientID:client
+                                                           secret:secret
+                                              wordPressComBaseUrl:wordPressComBaseUrl
+                                           wordPressComApiBaseUrl:wordPressComApiBaseUrl];
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithClient:(NSString *)client secret:(NSString *)secret
 {
     NSParameterAssert(client);

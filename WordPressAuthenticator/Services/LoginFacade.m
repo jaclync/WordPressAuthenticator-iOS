@@ -20,7 +20,10 @@
 {
     self = [super init];
     if (self) {
-        _wordpressComOAuthClientFacade = [[WordPressComOAuthClientFacade alloc] initWithClient:dotcomClientID secret:dotcomSecret];
+        _wordpressComOAuthClientFacade = [[WordPressComOAuthClientFacade alloc] initWithClient:dotcomClientID
+                                                                                        secret:dotcomSecret
+                                                                           wordPressComBaseUrl:@""
+                                                                        wordPressComApiBaseUrl:@""];
         _wordpressXMLRPCAPIFacade = [[WordPressXMLRPCAPIFacade alloc] initWithUserAgent:userAgent];
     }
     return self;
